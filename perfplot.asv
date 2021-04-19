@@ -1,0 +1,14 @@
+data = readmatrix('data.csv');
+N = data(:,1);
+perf_naive = data(:, 2);
+perf_strassen = data(:, 3);
+perf_hybrid = data(:, 4);
+
+loglog(N, perf_naive)
+hold on
+plot(N, perf_strassen)
+plot(N, perf_hybrid)
+title('')
+xlabel('Input size')
+ylabel('Runtime (ms)')
+legend('Naive', 'Strassen', 'Hybrid')
